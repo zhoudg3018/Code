@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>Component-props 属性设置</title>
+</head>
+<body>
+    <h1>Component-props 属性设置</h1>
+    <hr>
+    <div id="app">
+        <jspang></jspang>
+        <panda :here="message"></panda>
+    </div>
+    <script type="text/javascript">
+    Vue.component('jspang',{
+        template:'<div style="color:red">我是全局的jspang组件</div>'
+    })
+
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'China'
+        },
+        components:{
+            "panda":{
+                template:'<div style="color:green">Panda From {{here}}</div>',
+                props:['here'] //from-here 等同于 fromHere
+                //我们在写属性时经常会加入’-‘来进行分词，比如：，
+                //那这时我们在props里如果写成props:[‘form-here’]是错误的，
+                //我们必须用小驼峰式写法props:[‘formHere’]。
+            }
+        }
+    })
+     
+    </script>
+</body>
+</html>

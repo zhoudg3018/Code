@@ -27,13 +27,21 @@
     <h3>多选绑定一个数组</h3>
        <p>
             <input type="checkbox" id="JSPang" value="JSPang" v-model="web_Names">
-            <label for="JSPang">JSPang</label><br/>
+            <label for="isTrue">JSPang</label>
             <input type="checkbox" id="Panda" value="Panda" v-model="web_Names">
-            <label for="JSPang">Panda</label><br/>
+            <label for="isTrue">Panda</label>
             <input type="checkbox" id="PanPan" value="PanPan" v-model="web_Names">
-            <label for="JSPang">PanPan</label>
-            <p>{{web_Names}}</p>
+            <label for="isTrue">PanPan</label>
+
        </p>
+       <p>{{web_Names}}</p>
+       <hr>
+       <h3>单选框绑定</h3>
+       <input type="radio" id="one" value="男" v-model="sex">
+       <label for="one">男</label>
+       <input type="radio" id="two" value="女" v-model="sex">
+       <label for="two">女</label>
+       <p>你选择的性别是：{{sex}}</p>
     </div>
 
     <script type="text/javascript">
@@ -42,7 +50,8 @@
             data:{
                 message:'hello Vue!',
                 isTrue:true,
-                web_names:[]
+                web_Names:[],
+                sex:'女'
             }
         })
     </script>
